@@ -22,7 +22,7 @@
   },
   "engines": {
     "node": ">=22",
-    "pnpm": ">=9 <=10.12"
+    "pnpm": ">=9 <=10.14"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -174,5 +174,9 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "volta": {
+    "node": "22.12.0",
+    "pnpm": "10.12.0"
   }
 }
