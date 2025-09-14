@@ -50,6 +50,7 @@ export class AuthController {
       // 4. 返回登录结果
       return ApiResponse.success(res, {
         token,
+        expiresIn: JwtUtils.getExpiresIn(),
         user: {
           id: user!.id,
           openid: user!.openid,
