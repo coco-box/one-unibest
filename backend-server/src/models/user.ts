@@ -19,8 +19,10 @@ export class UserModel {
   static async create(userData: Omit<User, 'id' | 'created_at' | 'updated_at'>): Promise<User> {
     return await db.createUser({
       openid: userData.openid,
+      unionid: userData.unionid,
       nickname: userData.nickname,
       avatar: userData.avatar,
+      sessionKey: userData.sessionKey,
     })
   }
 
@@ -32,8 +34,10 @@ export class UserModel {
     }
     // 更新用户
     return await db.updateUser(existingUser.id, {
+      unionid: updateData.unionid,
       nickname: updateData.nickname,
       avatar: updateData.avatar,
+      sessionKey: updateData.sessionKey,
     })
   }
 }
